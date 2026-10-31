@@ -1,0 +1,22 @@
+---
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>X-Tech Members</title>
+  <style>
+    body { font-family: sans-serif; background: #0f172a; color: white; text-align: center; padding: 40px; }
+    a { display: inline-block; margin: 8px; padding: 12px 20px; background: #3355ff; color: white; border-radius: 12px; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <h1>X-Tech Club Members</h1>
+  <p>Every button below was added by a member through a pull request.</p>
+  {% for f in site.static_files %}
+    {% if f.path contains '/pages/' %}
+      <a href="{{ f.path | remove_first: '/' }}">{{ f.basename }}</a>
+    {% endif %}
+  {% endfor %}
+</body>
+</html>
